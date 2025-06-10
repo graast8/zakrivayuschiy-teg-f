@@ -40,11 +40,11 @@
   }
   
   .like-icon:hover .main-body {
-    fill: black;
+    fill: var(--accent-color);
   }
   
   .like-icon:hover .core {
-    fill: black;
+    fill: var(--accent-color);
   }
   
   .like-icon:active .main-body {

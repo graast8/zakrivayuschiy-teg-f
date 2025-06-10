@@ -65,7 +65,7 @@
   align-self: end;
   justify-self: center;
   text-transform: uppercase;
-  font-size: clamp(2.8125rem, 2.4604rem + 1.5023vw, 3.8125rem); /* 45px is min and 65px is max */
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); /* 49px is min and 65px is max */
   
 }
 
@@ -74,7 +74,7 @@
   justify-self: center;
   padding-bottom: 5px;
   text-transform: uppercase;
-  font-size: clamp(0.8125rem, 0.6144rem + 0.8451vw, 1.375rem); /* 14 is min and 22 is max */
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem); /* 14 is min and 23 is max */
   padding-bottom: 2px;
 }
 
@@ -215,8 +215,8 @@
 
 .label {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 25px;
+  right: 15px;
   font-family: var(--secondary-font);
   mix-blend-mode: hard-light;
   opacity: 0.5;
@@ -230,6 +230,7 @@
   padding-right: 22px;
   padding-bottom: 0px;
   font-size: 18px;
+  line-height: 21px;
 }
 
 .card_reflection {
@@ -238,6 +239,7 @@
   padding-left: 27px;
   padding-bottom: 25px;
   font-size: 18px;
+  line-height: 21px;
 }
 
 .merged_buttons {
@@ -249,6 +251,7 @@
   margin-bottom: 20px;
   margin-right: 25px;
   padding-bottom: 5px;
+  gap: 4px;
 }
 
 .card__like-button {
@@ -265,6 +268,7 @@
   border: none;
   border: 2px solid var(--accent-color);
   cursor: pointer;
+  padding: 0;
 }
 
 .common_hover_and_focus:focus {
@@ -286,12 +290,19 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.common_hover_and_focus:hover::before {
+  transform: scaleX(1);
+  background-color: #000;
+}
+
 .theme-dark .common_hover_and_focus::before {
   background-color: #00CC14;
 }
 
-.common_hover_and_focus:hover::before {
-  transform: scaleX(1);
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) .common_hover_and_focus::before {
+    background-color: #00CC14;
+  }
 }
 
 .card__icon-button {
@@ -303,8 +314,8 @@
   align-items: center;
   cursor: pointer;
   width: 45px;
-  height: 34px;
-  margin-right: 4px;
+  height: 34.5px;
+  padding: 0;
 }
 
 .card__icon-button:focus {
@@ -313,6 +324,11 @@
 
 .card__icon-button:focus-visible {
   outline: solid 2px var(--accent-color);
+}
+
+.like-icon {
+  margin: auto;
+  
 }
 
 .button__text {
@@ -372,6 +388,7 @@
   width: 353px;
   top: -30%;
   padding-right: 0px;
+  opacity: 40%;
 }
 
 dialog::backdrop {
@@ -408,6 +425,7 @@ dialog::backdrop {
   fill: var(--accent-color);
 }
 
+
 @supports (-webkit-text-stroke: 2px) or (text-stroke: 2px) {
   .label {
     -webkit-text-stroke: var(--text-stroke);
@@ -424,8 +442,8 @@ dialog::backdrop {
 @media (width <= 425px) {
 
   .header {
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 98px;
+    margin-bottom: 97px;
   }
 
   .start_menu_container {
@@ -474,7 +492,8 @@ dialog::backdrop {
 
   .card__icon-button {
     margin-right: 3px;
-    margin-top: 2px;
+    margin-top: 1px;
+    height: 34px;
   }
 
   .save_button {
@@ -485,6 +504,30 @@ dialog::backdrop {
   .floppy_disc {
     width: 28px;
     height: 28px;
+  }
+
+  .dialog_container:is([open]) {
+    grid-template-columns: 60px 230px;
+    padding-left: 15px;
+    padding-bottom: 0px;
+    column-gap: 5px;
+    padding-top: 25px;
+  }
+
+  .dialog__header {
+    letter-spacing: normal;
+  }
+
+  .dialog_button_container {
+    width: 283px;
+  }
+
+  .dialog_button {
+    width: 256px;
+  }
+
+  .floppy_disc_dialog {
+    justify-self: center;
   }
 
 }
