@@ -65,7 +65,7 @@
   align-self: end;
   justify-self: center;
   text-transform: uppercase;
-  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem); /* 49px is min and 65px is max */
+  font-size:  clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);  /* 49px is min and 65px is max */
   
 }
 
@@ -74,7 +74,7 @@
   justify-self: center;
   padding-bottom: 5px;
   text-transform: uppercase;
-  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem); /* 14 is min and 23 is max */
+  font-size:  clamp(0.8125rem, 0.6144rem + 0.8451vw, 1.375rem);  /* 14 is min and 23 is max */
   padding-bottom: 2px;
 }
 
@@ -127,7 +127,7 @@
 .theme-menu__button::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
@@ -221,7 +221,13 @@
   mix-blend-mode: hard-light;
   opacity: 0.5;
   z-index: 2;
+  text-shadow: 
+    -1px -1px 0 var(--text-stroke),
+    1px -1px 0 var(--text-stroke),
+    -1px 1px 0 var(--text-stroke),
+    1px 1px 0 var(--text-stroke);
 }
+
 
 .card_description {
   padding: 15px;
@@ -284,7 +290,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #000;
+  background-color: var(--hover-and-focus-bg-color);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s ease-in-out;
@@ -313,7 +319,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  width: 45px;
+  width: 34.5px;
   height: 34.5px;
   padding: 0;
 }
@@ -375,20 +381,18 @@
 }
 
 .dialog_container:is([open]){
-  position: fixed;
   display: grid;
-  grid-template-columns: 50px 250px;
+  grid-template-columns: 50px 230px;
   grid-template-rows: repeat(2, 1fr);
   column-gap: 10px;
+  padding: 0px;
   align-items: center;
   justify-content: center;
   background-color: var(--background-color);
   border: solid 2px var(--accent-color);
-  height: 191px;
   width: 353px;
-  top: -30%;
-  padding-right: 0px;
-  opacity: 40%;
+  padding: 30px;
+  row-gap: 30px;
 }
 
 dialog::backdrop {
@@ -401,7 +405,6 @@ dialog::backdrop {
   text-transform: uppercase;
   font-size: 14px;
   line-height: 150%;
-  letter-spacing: 1px;
   grid-area: 1 / 2 / 2 / 3;
 }
 
@@ -410,11 +413,11 @@ dialog::backdrop {
   justify-content: center;
   align-items: center;
   display: flex;
-  width: 300px;
+  width: 290px;
 }
 
 .dialog_button {
-  width: 293px;
+  width: 290px;
   justify-self: center;
 } 
 
@@ -426,10 +429,11 @@ dialog::backdrop {
 }
 
 
-@supports (-webkit-text-stroke: 2px) or (text-stroke: 2px) {
+@supports (-webkit-text-stroke: 1px) or (text-stroke: 1px) {
   .label {
     -webkit-text-stroke: var(--text-stroke);
     text-stroke: var(--text-stroke);
+    text-shadow: none;
   }
 }
 
@@ -449,10 +453,6 @@ dialog::backdrop {
   .start_menu_container {
     width: 100%;
    
-  }
-
-  .start_menu {
-    white-space: nowrap;
   }
 
   .card_container {
@@ -512,6 +512,7 @@ dialog::backdrop {
     padding-bottom: 0px;
     column-gap: 5px;
     padding-top: 25px;
+    overflow: hidden;
   }
 
   .dialog__header {
@@ -519,11 +520,11 @@ dialog::backdrop {
   }
 
   .dialog_button_container {
-    width: 283px;
+    width: 300px;
   }
 
   .dialog_button {
-    width: 256px;
+    width: 285px;
   }
 
   .floppy_disc_dialog {
