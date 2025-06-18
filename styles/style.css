@@ -390,9 +390,12 @@
   justify-content: center;
   background-color: var(--background-color);
   border: solid 2px var(--accent-color);
-  width: 353px;
-  padding: 30px;
-  row-gap: 30px;
+  padding: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 25px;
+  padding-bottom: 10px;
+  row-gap: 20px;
 }
 
 dialog::backdrop {
@@ -507,12 +510,14 @@ dialog::backdrop {
   }
 
   .dialog_container:is([open]) {
-    grid-template-columns: 60px 230px;
-    padding-left: 15px;
-    padding-bottom: 0px;
-    column-gap: 5px;
-    padding-top: 25px;
-    overflow: hidden;
+    grid-template-columns: 60px 238px;
+    column-gap: 0px;
+    padding-top: 30px;
+    /* padding-left: 50px; */
+    padding-right: 0px;
+    padding-left: 35px;
+    padding-bottom: 20px;
+    row-gap: 18px;
   }
 
   .dialog__header {
@@ -520,15 +525,16 @@ dialog::backdrop {
   }
 
   .dialog_button_container {
-    width: 300px;
+    width: 260px;
   }
 
   .dialog_button {
-    width: 285px;
+    width: 258px;
   }
 
   .floppy_disc_dialog {
     justify-self: center;
+    margin-right: 15px;
   }
 
 }
