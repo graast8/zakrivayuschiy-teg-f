@@ -228,24 +228,15 @@
     1px 1px 0 var(--text-stroke);
 }
 
-
-.card_description {
-  padding: 15px;
-  padding-top: 22px;
-  padding-left: 28px;
-  padding-right: 22px;
-  padding-bottom: 0px;
+.card_text {
+  display: flex;
+  flex-direction: column;
   font-size: 18px;
   line-height: 21px;
 }
 
-.card_reflection {
-  padding: 20px;
-  padding-top: 27px;
-  padding-left: 27px;
-  padding-bottom: 25px;
-  font-size: 18px;
-  line-height: 21px;
+.card_description {
+  padding: 22px 22px 25px 28px;
 }
 
 .merged_buttons {
@@ -305,12 +296,6 @@
   background-color: #00CC14;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not(.theme-light) .common_hover_and_focus::before {
-    background-color: #00CC14;
-  }
-}
-
 .card__icon-button {
   appearance: none;
   border: none;
@@ -322,6 +307,8 @@
   width: 34.5px;
   height: 34.5px;
   padding: 0;
+  box-shadow: 0 0 0 0 var(--accent-color);
+  transition: box-shadow 0.5s ease-in-out;
 }
 
 .card__icon-button:focus {
@@ -329,7 +316,8 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: solid 2px var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-color);
+  
 }
 
 .like-icon {
@@ -434,8 +422,8 @@ dialog::backdrop {
 
 @supports (-webkit-text-stroke: 1px) or (text-stroke: 1px) {
   .label {
-    -webkit-text-stroke: var(--text-stroke);
-    text-stroke: var(--text-stroke);
+    -webkit-text-stroke: 1px var(--text-stroke);
+    text-stroke: 1px var(--text-stroke);
     text-shadow: none;
   }
 }

@@ -6,7 +6,7 @@
     --regular-font-weight: 400;
     --main-font: 'Inter-Variable', Arial, Helvetica, sans-serif;
     --secondary-font: 'PressStart2P',  Arial, Helvetica, sans-serif;
-    --text-stroke: 1px white;
+    --text-stroke: white;
     --heart-contour-color: black;
     --heart-sparks-color: #FF0000;
     --button-color: #fff;

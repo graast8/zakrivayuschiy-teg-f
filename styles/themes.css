@@ -3,9 +3,9 @@
     --accent-color: #000;
     --header-font-weight: 700;
     --regular-font-weight: 400;
-    --main-font: 'Inter-Variable';
-    --secondary-font: 'PressStart2P';
-    --text-stroke: 1px white;
+    --main-font: 'Inter-Variable', Arial, Helvetica, sans-serif;
+    --secondary-font: 'PressStart2P',  Arial, Helvetica, sans-serif;
+    --text-stroke: white;
     --heart-contour-color: black;
     --heart-sparks-color: #FF0000;
     --button-color: #fff;
@@ -43,7 +43,7 @@
     --header-font-weight: 785;
     --regular-font-weight: 465;
     --button-color: #00CC14;
-    --text-stroke: 1px black;
+    --text-stroke: black;
     --heart-contour-color: #00CC14;
     --button-hover-color: #000;
 
@@ -80,9 +80,9 @@
     --header-font-weight: 785;
     --regular-font-weight: 465;
     --button-color: #00CC14;
-    --text-stroke: 2px rgba(0, 0, 0, 0.1);
+    --text-stroke:  rgba(0, 0, 0, 0.1);
     --heart-contour-color: #00CC14;
-    --text-stroke: 1px black;
+    --text-stroke:  black;
     --background-patterns: 
     
     repeating-linear-gradient(
@@ -108,4 +108,10 @@
     );
     }
 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) .common_hover_and_focus::before {
+    background-color: #00CC14;
+  }
 }
