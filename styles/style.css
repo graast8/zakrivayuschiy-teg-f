@@ -399,6 +399,7 @@ dialog::backdrop {
   font-size: 14px;
   line-height: 150%;
   grid-area: 1 / 2 / 2 / 3;
+  max-width: 234px;
 }
 
 .dialog_button_container {
